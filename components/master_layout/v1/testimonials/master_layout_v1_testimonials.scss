@@ -1,0 +1,110 @@
+.master-layout{
+  .ct-testimonials {
+    .ct-testimonials-slider {
+      text-align: center;
+
+      .slick-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, 0);
+        width: 20px;
+        height: 35px;
+        border: 0;
+        overflow: hidden;
+        text-indent: -999px;
+        outline: 0;
+        cursor: pointer;
+        text-align: left;
+      }
+
+      .slick-prev {
+        left: 0;
+        background: image-url('https://s3.amazonaws.com/placeholderimages/left_arrow.svg') left center no-repeat;
+        background-size: cover;
+      }
+
+      .slick-next {
+        right: 0;
+        background: image-url('https://s3.amazonaws.com/placeholderimages/right_arrow.svg') left center no-repeat;
+        background-size: cover;
+      }
+
+    }
+
+    .ct-testimonials-slider-item {
+      outline: 0;
+    }
+
+    .ct-testimonials-text {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: $ctaColor;
+      font-size: 24px;
+      line-height: 1.25;
+      position: relative;
+      padding-left: 60px;
+      padding-right: 60px;
+
+      @include sm {
+        font-size: 20px;
+      }
+
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 63px;
+        height: 45px;
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include sm {
+          width: 34px;
+          height: 24px;
+        }
+      }
+      &:before {
+        right: 100%;
+        margin-right: -45px;
+        background-image: image-url('https://s3.amazonaws.com/placeholderimages/left_quote.svg');
+        @include sm {
+          margin-right: 0;
+        }
+      }
+      &:after {
+        left: 100%;
+        margin-left: -45px;
+        background-image: image-url('https://s3.amazonaws.com/placeholderimages/right_quote.svg');
+        @include sm {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .ct-testimonials-author {
+      color: $dark-gray;
+      font-size: 16px;
+      padding-top: 10px;
+      padding-bottom: 12px;
+    }
+
+    .ct-testimonials-stars {
+      .star {
+        display: inline-block;
+        vertical-align: top;
+        width: 20px;
+        height: 20px;
+        background: image-url('https://s3.amazonaws.com/placeholderimages/star.svg') center center no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .ct-testimonials-date {
+      padding-top: 26px;
+      font-size: 16px;
+      color: $medium-gray;
+    }
+
+  }
+}

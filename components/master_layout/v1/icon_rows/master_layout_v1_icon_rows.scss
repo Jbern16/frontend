@@ -1,0 +1,39 @@
+.master-layout{
+
+  // CT SECTION: ICON ROWS
+  .ct-i-rows{
+
+    .i-row{
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      .i-container{
+        flex-basis: 22%;
+        margin-right: 3%;
+        margin-bottom: 50px;
+        text-align: center;
+
+        @include sm{
+          flex-basis: 80%;
+          margin-right: 0;
+        }
+
+        &:last-of-type{
+          margin-right: 0;
+        }
+
+        .i-title{
+          font-weight: bold;
+          font-size: 18px;
+        }
+        .i-text{
+          font-size: 14px;
+        }
+        img{
+          width: 100%;
+          max-width: 100px;
+        }
+      }
+    }
+  }
+}

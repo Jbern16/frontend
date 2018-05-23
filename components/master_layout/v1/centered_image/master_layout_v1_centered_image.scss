@@ -1,0 +1,22 @@
+.master-layout {
+  .ct-centered-image {
+    text-align: center;
+
+    .inner-ct-component{
+      width: 50%;
+      max-width: 800px;
+
+      img {
+        width: 100%;
+      }
+      .caption{
+        font-style: italic;
+        margin: 5px 0 0 0;
+        text-align: left;
+      }
+      @include sm {
+        width: 80%;
+      }
+    }
+  }
+}

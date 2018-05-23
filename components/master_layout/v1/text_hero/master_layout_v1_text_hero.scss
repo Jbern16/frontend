@@ -1,0 +1,45 @@
+.master-layout{
+
+  .ct-text-hero {
+    position: relative;
+    .image-container{
+      img{ width: 100%;}
+
+      .dt-img{ display: block;}
+      .mobile-img{ display: none;}
+      @include sm{
+        .dt-img{ display: none;}
+        .mobile-img{ display: block;}
+      };
+    }
+
+    .text-container{
+      position: absolute;
+      width: 70%;
+      left: 15%;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      .title{
+        margin-top: 0;
+      }
+      .text{
+        margin-bottom: 0;
+      }
+
+      .text-hero-cta-btn{
+        @extend .btn;
+      }
+
+      @include sm{
+        width: 90%;
+        left: 5%;
+        text-align: center;
+      }
+
+
+
+    }
+
+  }
+}

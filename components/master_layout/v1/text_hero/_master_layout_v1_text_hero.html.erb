@@ -1,0 +1,30 @@
+<div class="ct-component ct-text-hero <%= @classes %>">
+
+  <% if @image.present? || @image_mobile.present? %>
+    <div class="image-container">
+
+      <% if @image.present? %>
+        <%= image_tag @image, class: "dt-img" %>
+      <% end %>
+
+      <% if @image_mobile.present? %>
+        <%= image_tag @image_mobile, class: "mobile-img" %>
+      <% end %>
+
+    </div>
+  <% end %>
+
+  <div class="text-container">
+    <% if @title.present? %>
+      <h3 class="title"><%= @title.html_safe %></h3>
+    <% end %>
+
+    <% if @text.present? %>
+      <p class="text"><%= @text.html_safe %></p>
+    <% end %>
+
+    <% if @btn_text.present? %>
+      <%= link_to @btn_text, @btn_link || @cta_link, class: 'text-hero-cta-btn track-cta' %>
+    <% end %>
+  </div>
+</div >

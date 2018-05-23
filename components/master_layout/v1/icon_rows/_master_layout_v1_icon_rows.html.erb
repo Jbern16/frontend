@@ -1,0 +1,25 @@
+<div class="ct-component ct-i-rows <%= @classes %>">
+  <div class="inner-ct-component">
+
+    <%- if @title %>
+      <h2 class="ct-component-title"><%= @title.html_safe %></h2>
+    <% end -%>
+
+    <% @rows.each do |row| %>
+      <div class="i-row">
+        <% row['icon_groups'].each do |icon_group| %>
+          <div class="i-container">
+            <%= image_tag icon_group['img_name'] %>
+            <% if icon_group['title'].present? %>
+              <p class="i-title"><%= icon_group['title'].html_safe %></p>
+            <% end %>
+            <% if icon_group['text'].present? %>
+              <p class="i-text"><%= icon_group['text'].html_safe %></p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

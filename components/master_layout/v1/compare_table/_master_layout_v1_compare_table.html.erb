@@ -1,0 +1,46 @@
+<div class="ct-component ct-compare <%= @classes %>">
+
+  <div class="inner-ct-component">
+
+    <%- if @title %>
+      <h2 class="ct-component-title"><%= @title.html_safe  %></h2>
+    <% end -%>
+
+    <div class="ct-compare-table">
+      <div class="ct-compare-table-head">
+        <div class="ct-compare-table-row">
+          <div class="head-feature-title">
+            <%= @category_title %>
+          </div>
+          <div class="head-name">
+            <%= @brand %>
+          </div>
+          <div class="head-name muted">
+            <%= @other_title %>
+          </div>
+        </div>
+      </div>
+
+      <% @features.each do |feature| %>
+        <div class="ct-compare-table-row">
+          <div class="feature-title">
+            <%= feature['feature_title'].html_safe %>
+          </div>
+          <div class="feature-icon-wrap brand" data-title="<%= @brand %>">
+            <% if @brand_image %>
+              <%= image_tag @brand_image, class: "feature-icon" %>
+            <% end %>
+          </div>
+          <div class="feature-icon-wrap muted" data-title="<%= @other_title %>">
+            <% if @other_image %>
+              <%= image_tag @other_image, class: "feature-icon" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,27 @@
+<div class="ct-video-hero">
+
+  <div class="filter"></div>
+
+  <video loop muted autoplay playsinline poster="<%= image_path(@dt_poster) %>" class="fullscreen-video">
+    <source src='<%= image_path("#{@video_name}.webm") %>' type="video/webm">
+    <source src='<%= image_path("#{@video_name}.mp4") %>' type="video/mp4">
+  </video>
+
+  <div class="inner-video-hero">
+    <% if @title.present? %>
+      <h1 class="title"><%= @title.html_safe %></h1>
+    <% end %>
+    <% if @text %>
+      <p class="text"><%= @text.html_safe %></p>
+    <% end %>
+    <% if @btn_text %>
+      <%= link_to @cta_link || @cta_link, class: 'hero-cta-btn track-cta' do %><span><%= @btn_text %></span><% end %>
+    <% end %>
+  </div>
+
+  <%= link_to "#", class: 'caret-link js-jump-link', data: {parent: '.ct-video-hero'} do %>
+    <svg fill="#FFFFFF" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="m6 25.504c-0.015625-1.0508 0.63672-1.9961 1.6289-2.3555 0.99219-0.35938 2.1055-0.058594 2.7734 0.75781l39.605 46.789 39.594-46.789c0.42188-0.51172 1.0312-0.83203 1.6914-0.89453 0.66016-0.058594 1.3164 0.14453 1.8242 0.57031 0.50781 0.42578 0.82422 1.0391 0.875 1.6953 0.054687 0.66016-0.16016 1.3125-0.59375 1.8125l-41.492 49.031h-0.003906c-0.46875 0.55469-1.1641 0.87891-1.8945 0.87891-0.73437 0-1.4258-0.32422-1.8984-0.87891l-41.504-49.031c-0.38281-0.44141-0.59766-1-0.60547-1.582z" fill-rule="evenodd"/>
+    </svg>
+  <% end %>
+</div>

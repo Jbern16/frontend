@@ -1,0 +1,35 @@
+.master-layout{
+
+  $masterSectionPadding: 60px;
+  $masterSectionPaddingMobile: 40px;
+
+  .ct-component{
+    padding: $masterSectionPadding 0;
+    @include sm{
+      padding: $masterSectionPaddingMobile 0;
+    };
+  }
+
+  .inner-ct-component{
+    width: $dt-section-percentage-width;
+    max-width: $dt-section-max-width;
+    margin: auto;
+    @include sm{
+      width: $mobile-section-width;
+    }
+  }
+
+
+  .ct-component-title{
+    text-align: center;
+  }
+
+  p a{
+    @include inline-link;
+  }
+
+
+  .light-gray-background{
+    background-color: $light-gray;
+  }
+}

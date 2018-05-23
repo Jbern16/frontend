@@ -1,0 +1,26 @@
+footer.fixed-mobile-cta{
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  display: none;
+  @include sm{
+    display: block;
+  }
+
+  .fixed-mobile-cta-btn{
+    @extend .btn;
+    background-color: $ctaColor
+  }
+
+  &.headroom--top {
+    opacity: 0;
+  }
+  &.headroom--not-top {
+    opacity: 1;
+  }
+  &.headroom--bottom {
+    display: none;
+  }
+}

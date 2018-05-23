@@ -1,0 +1,16 @@
+<div class="ct-component ct-blockquote <%= @classes %>">
+
+  <div class="inner-ct-component">
+    <%- if @quote %>
+      <blockquote class="text-blockquote2">
+        <p><%= @quote.html_safe %></p>
+      </blockquote>
+    <% end -%>
+
+    <%- if @byline %>
+      <p class="blockquote-author">-<%= @byline.html_safe  %></p>
+    <% end -%>
+
+  </div>
+
+</div>

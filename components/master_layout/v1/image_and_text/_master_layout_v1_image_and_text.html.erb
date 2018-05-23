@@ -1,0 +1,25 @@
+<div class="ct-component ct-image-and-text <%= @classes %>">
+  <div class="inner-ct-component">
+
+    <%- if @image %>
+      <div class="image-container">
+        <%= image_tag @image %>
+      </div>
+    <% end -%>
+
+    <div class="text-container">
+      <div class="inner-text-container">
+
+        <%- if @title %>
+          <h3 class="title"><%= @title.html_safe %></h3>
+        <% end -%>
+
+        <%- if @text %>
+          <p class="text"><%= @text.html_safe %></p>
+        <% end -%>
+
+      </div>
+    </div>
+
+  </div>
+</div>

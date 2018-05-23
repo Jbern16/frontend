@@ -1,0 +1,64 @@
+header.header-with-links {
+
+  height: 70px;
+  width: 100%;
+  @include sm{
+    height: 50px;
+  }
+  .inner-header {
+    width: 100%;
+    max-width: $dt-section-max-width;
+    padding: 0 3%;
+    height: 70px;
+    margin: 0 auto;
+    @include sm{
+      height: 50px;
+      text-align: center;
+    }
+  }
+
+  .header-logo-link{
+    display: inline-block;
+    .header-logo {
+      height: 40px;
+      margin: 15px 0;
+      @include sm{
+        height: 30px;
+        margin: 10px 0;
+      }
+    }
+  }
+
+  .header-links{
+    display: inline-block;
+    list-style-type: none;
+    padding: 0;
+    height: 40px;
+    margin: 15px 0;
+    float: right;
+    @include sm {
+      display: none;
+    }
+    li{
+      display: inline-block;
+      margin-right: 30px;
+      height: 40px;
+      line-height: 40px;
+      &:last-of-type{
+        margin-right: 0;
+      }
+      a {
+        font-size: 14px;
+        color: $ctaColor;
+        font-weight: 500;
+        letter-spacing: .02em;
+        text-transform: uppercase;
+        text-decoration: none;
+        &:hover { color: $black; }
+        @include sm {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

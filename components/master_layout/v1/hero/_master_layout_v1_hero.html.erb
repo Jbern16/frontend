@@ -1,0 +1,32 @@
+<div class="ct-component ct-hero <%= @classes %>">
+
+  <%- if @img_name %>
+    <div class="img">
+      <%= image_tag @img_name %>
+    </div>
+  <% end -%>
+
+  <%- if @mobile_img_name %>
+    <div class="mobile-img">
+      <%= image_tag @mobile_img_name %>
+    </div>
+  <% end -%>
+
+  <div class="inner-hero">
+    <div class="text-box">
+
+      <%- if @title %>
+        <h1 class="title"><%= @title.html_safe %></h1>
+      <% end -%>
+
+      <%- if @text %>
+        <p class="text"><%= @text.html_safe %></p>
+      <% end -%>
+
+      <%- if @btn_text %>
+        <%= link_to @btn_text, @cta_link || @cta_link, class: 'hero-cta-btn track-cta' %>
+      <% end -%>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+.master-layout{
+  .ct-image-and-text{
+    padding: 40px 0;
+
+    .inner-ct-component{
+      display: flex;
+      flex-flow: row wrap;
+    }
+    .image-container{
+      flex-basis: 50%;
+      img{ width: 100%; }
+      @include sm{
+        flex-basis: 100%;
+        margin-bottom: 40px;
+        img{
+          width: $mobile-section-width;
+          margin: 0 auto;
+          display: block;
+        }
+      };
+    }
+    .text-container{
+      flex-basis: 50%;
+      position: relative;
+
+      .inner-text-container{
+        position: absolute;
+        width: 70%;
+        left: 15%;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .title{
+          margin-top: 0;
+        }
+        .text{
+          margin-bottom: 0;
+        }
+        @include sm{
+          position: relative;
+          width: 100%;
+          left: initial;
+          top: initial;
+          transform: none;
+          width: $mobile-section-width;
+          margin: 0 auto;
+          display: block;
+        };
+      }
+      @include sm{
+        flex-basis: 100%;
+      };
+    }
+
+    &.reverse{
+      .image-container{ order: 2; }
+      .text-container{ order: 1; }
+      @include sm{
+        .image-container{ order: 1; }
+        .text-container{ order: 2; }
+      }
+    }
+  }
+}

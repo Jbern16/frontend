@@ -1,0 +1,18 @@
+<header class="mobile-header <%= @classes %>">
+  <div class="inner-header">
+
+    <%= link_to(image_tag(@logo_img, class: "mobile-header-logo"), @cta_link || @cta_link) %>
+
+    <button class="hamburger hamburger--squeeze is-active" type="button" onclick="$(this).parents('.mobile-header').toggleClass('is-active')">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </div>
+
+  <div class="menu-section">
+    <% @links.each do |header_link| %>
+      <%= link_to header_link['text'], header_link['link'] || @cta_link, class: "mobile-header-link" %>
+    <% end %>
+  </div>
+</header>

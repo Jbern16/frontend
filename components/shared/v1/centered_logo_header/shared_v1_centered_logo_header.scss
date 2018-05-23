@@ -1,0 +1,54 @@
+header.centered-logo-header{
+  height: $headerHeight;
+  width: 100%;
+  .inner-header {
+    width: 100%;
+    padding: 0 3%;
+    height: $headerHeight;
+    display: flex;
+
+    .header-left{
+      flex-basis: 44%;
+      @include sm {
+        display: none;
+      }
+      .left-links{
+        a{
+          line-height: $headerHeight;
+          margin-right: 18px;
+          font-size: 14px;
+          text-decoration: none;
+          display: inline-block;
+          &:hover{
+            color: $ctaColor;
+          }
+          &:last-of-type{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    .header-middle{
+      flex-basis: 12%;
+      text-align: center;
+      @include sm {
+        flex-basis: 100%;
+      }
+      #header-logo {
+        height: 50px;
+        margin: 10px 0;
+      }
+
+    }
+    .header-right{
+      flex-basis: 44%;
+      text-align: right;
+
+      @include sm {
+        display: none;
+      }
+
+    }
+
+  }
+}

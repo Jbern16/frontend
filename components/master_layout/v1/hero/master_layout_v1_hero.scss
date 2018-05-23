@@ -1,0 +1,73 @@
+// CT SECTION: HERO
+
+.master-layout{
+  .ct-hero {
+    display: block;
+    height: 40vw;
+    min-height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-image: url("http://via.placeholder.com/150x50");
+
+    @include sm {
+      height: initial;
+      background-image: none!important;
+      min-height: initial;
+    }
+
+    .ct-component{
+      padding: 0;
+    }
+    .hero-cta-btn{
+      @extend .btn;
+      margin-top: 15px;
+      padding: 16px 34px;
+    }
+
+    .mobile-img{
+      display: none;
+      @include sm {
+        width: 100%;
+        display: block;
+        position: relative;
+        img{
+          width: 100%;
+        }
+      }
+    }
+
+    .inner-hero{
+
+      @include sm {
+        padding: 0 0 40px 0;
+      }
+      .text-box {
+        width: 37.5%;
+        margin-left: 62.5%;
+        padding-right: 20px;
+        margin-top: 100px;
+        @include sm {
+          width: 96%;
+          margin: 0 2%;
+          text-align: center;
+        }
+
+        .title {
+          margin-bottom: 20px;
+          font-size: 40px;
+          line-height: 54px;
+        }
+
+        .text {
+          @extend .medium-body;
+          margin-bottom: 10px;
+          @include sm{
+            font-size: 16px;
+          };
+        }
+      }
+    }
+  }
+}

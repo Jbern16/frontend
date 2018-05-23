@@ -1,0 +1,15 @@
+<div class="ct-component ct-pressband <%= @classes %>">
+  <div class="inner-ct-component">
+    <% if @title %>
+      <h2 class="ct-component-title"><%= @title.html_safe %></h2>
+    <% end %>
+
+    <div class="outlets">
+      <% @outlets.each do |outlet| %>
+        <div class="outlet">
+          <%= image_tag outlet['img'] %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,147 @@
+.master-layout {
+  .ct-vertical-slides {
+
+    *{
+      min-height: 0;
+      min-width: 0;
+    }
+
+    .inner-ct-component{
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .vertical-slides-left{
+      flex-basis: 50%;
+      margin-right: 5%;
+      margin-left: 5%;
+
+      @include sm {
+        flex-basis: 100%;
+        margin: 0 0 20px 0;
+      }
+    }
+
+    .vertical-slides-right{
+      flex-basis: 40%;
+      position: relative;
+      @include sm {
+        flex-basis: 100%;
+      }
+    }
+
+    .vertical-slides-left{
+      display: flex;
+      flex-flow: row;
+
+      .menu {
+        flex-basis: 10%;
+        @include sm {
+          display: none;
+        }
+        img {
+          opacity: .3;
+          &.active {opacity: 1;}
+          margin-top: 30%;
+          width: 65%;
+          border-radius: 50%;
+        }
+      }
+
+      .showcase {
+        flex-basis: 90%;
+        @include sm {
+          flex-basis: 100%;
+        }
+        img { width: 100%;}
+
+        .vertical-slide{
+          img { width: 100%;}
+          .dt-img{ display: block; }
+          .mobile-img{ display: none; }
+          @include sm {
+            .dt-img{ display: none; }
+            .mobile-img{ display: block; }
+          }
+        }
+      }
+
+    }
+
+
+    .text-content {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @include sm{
+        position: relative;
+        top: initial;
+        transform: initial;
+      }
+      .title{
+        margin-top: 0;
+      }
+      .text{
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+
+.slick-dots {
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  li {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    button {
+        border: 0;
+        background: transparent;
+        display: block;
+        height: 25px;
+        width: 25px;
+        outline: none;
+        line-height: 0px;
+        font-size: 0px;
+        color: transparent;
+        padding: 5px;
+        cursor: pointer;
+        &:hover, &:focus {
+          outline: none;
+          &:before {
+            opacity: 1;
+          }
+        }
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: "\2022";
+          width: 25px;
+          height: 25px;
+          font-size: 25px;
+          line-height: 25px;
+          text-align: center;
+          color: black;
+          opacity: .5;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+    }
+    &.slick-active button:before {
+      opacity: 1;
+    }
+  }
+}

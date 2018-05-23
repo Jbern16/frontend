@@ -1,0 +1,155 @@
+header.mobile-header{
+  display: none;
+  position: relative;
+  height: 50px;
+  text-align: center;
+  .mobile-header-logo{
+    height: 25px;
+    margin-top: 12.5px;
+  }
+  .hamburger{
+    position: absolute;
+    z-index: 2;
+    top: 18px;
+    right: 5%;
+  }
+
+  .mobile-header-link{
+    @extend h6;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    &.small{
+      font-size: 12px;
+    }
+  }
+  .divider{
+    height: 30px;
+  }
+  .menu-section{
+    background-color: #f0ece9;
+    padding: 60px;
+    -webkit-box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    will-change: transform, opacity;
+    -webkit-transform: scale3d(0.85, 0.85, 0.85);
+    transform: scale3d(0.85, 0.85, 0.85);
+    -webkit-transition-property: transform, opacity;
+    -webkit-transition-property: opacity, -webkit-transform;
+    transition-property: opacity, -webkit-transform;
+    transition-property: transform, opacity;
+    transition-property: transform, opacity, -webkit-transform;
+    -webkit-transition-duration: 250ms;
+    transition-duration: 250ms;
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+  }
+
+  .hamburger {
+    display: inline-block;
+    cursor: pointer;
+    -webkit-transition-property: opacity, filter;
+    -webkit-transition-property: opacity, -webkit-filter;
+    transition-property: opacity, -webkit-filter;
+    transition-property: opacity, filter;
+    transition-property: opacity, filter, -webkit-filter;
+    -webkit-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    margin: 0;
+    overflow: visible;
+  }
+  .hamburger-box{
+    width: 16px;
+    height: 12px;
+    display: inline-block;
+    position: relative;
+  }
+  .hamburger-inner{
+
+    width: 16px;
+    height: 2px;
+    background-color: transparent;
+    border-radius: 4px;
+    position: absolute;
+    -webkit-transition-property: transform;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+    &:before{
+      top: -5px;
+    }
+    &:after{
+      bottom: -5px;
+    }
+    &:before, &:after{
+      content: '';
+      display: block;
+      width: 16px;
+      height: 2px;
+      background-color: #f0737e;
+      border-radius: 4px;
+      position: absolute;
+      -webkit-transition-property: transform;
+      -webkit-transition-property: -webkit-transform;
+      transition-property: -webkit-transform;
+      transition-property: transform;
+      transition-property: transform, -webkit-transform;
+      -webkit-transition-duration: 0.15s;
+      transition-duration: 0.15s;
+      -webkit-transition-timing-function: ease;
+      transition-timing-function: ease;
+    }
+  }
+
+  &.is-active{
+
+    .menu-section{
+      position: absolute;
+      z-index: 2;
+      top: 60px;
+      right: 10px;
+      left: 10px;
+      opacity: 1;
+      pointer-events: auto;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+    .hamburger{
+      .hamburger-inner{
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transition-delay: 0.12s;
+        transition-delay: 0.12s;
+        -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+        &:before{ top: 0; }
+        &:after{
+          bottom: 0;
+          -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+}

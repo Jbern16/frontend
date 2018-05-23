@@ -1,0 +1,16 @@
+.master-layout{
+
+  // CT SECTION: CENTERED TEXT
+  .ct-centered-text {
+    text-align: center;
+
+    p {
+      text-align: center;
+      font-size: 26px;
+      line-height: 1.5;
+      @include sm{
+        font-size: 20px;
+      }
+    }
+  }
+}

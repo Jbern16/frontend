@@ -1,0 +1,15 @@
+.master-layout{
+
+  // CT SECTION: LEFT TEXT
+  .ct-left-text {
+    text-align: left;
+
+    p {
+      text-align: left;
+      font-size: 24px;
+      @media(max-width: 800px) {
+        font-size: 20px;
+      }
+    }
+  }
+}

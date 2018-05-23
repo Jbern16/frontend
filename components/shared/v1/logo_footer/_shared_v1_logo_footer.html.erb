@@ -1,0 +1,11 @@
+<footer class="logo-footer <%= @classes %>">
+ <div class="inner-footer">
+   <%= link_to image_tag(@img), @cta_link || @cta_link, class: "logo-link" %>
+   <div class='footer-links'>
+     <% @links.each do |link| %>
+        <%= link_to link['text'], link['url'] || @cta_link %>
+      <% end %>
+   </div>
+ </div>
+</footer>
+

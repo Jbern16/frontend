@@ -1,0 +1,58 @@
+header.headline-header{
+  z-index: 10;
+  width: 100%;
+  background-color: white;
+  height: $slideHeaderHeight;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.4);
+  .inner-header{
+    width: 96%;
+    margin: 0 auto;
+    @include sm {
+      text-align: center;
+    }
+  }
+  .article-title{
+    margin: 0;
+    line-height: $slideHeaderHeight;
+    display: inline-block;
+    @media(max-width: 800px) {
+      display: none;
+    }
+  }
+  .cta-link{
+    @extend .btn;
+    float: right;
+    height: 30px;
+    margin-top: 10px;
+    line-height: 30px;
+    padding: 0 25px;
+    font-size: 14px;
+    @include sm {
+      float: none;
+    }
+    &:hover{
+      opacity: .9;
+    }
+  }
+}
+
+header.slide-in-header{
+  position: fixed;
+  top: 0;
+  height: $slideHeaderHeight;
+  width: 100%;
+  @include sm{
+    display: none;
+  };
+
+  &.headroom--top {
+    max-height: 0;
+    overflow: hidden;
+  }
+  &.headroom--not-top {
+    max-height: $slideHeaderHeight;
+    -webkit-transition: max-height .2s;
+    transition: max-height .2s;
+  }
+
+}

@@ -1,0 +1,28 @@
+<div data-controller="master-layout-v1-vertical-slides" class="ct-component ct-vertical-slides <%= @classes %>">
+  <div class="inner-ct-component">
+    <div class='vertical-slides-left'>
+
+      <section class='menu'>
+        <% @slides.each_with_index do |slide, index| %>
+          <%= image_tag slide['desktop_image'], class: "menu-img #{'active' if index == 0}", data: {index: index} %>
+        <% end %>
+      </section>
+
+      <section class="showcase js-slick-vertical-slides">
+        <% @slides.each_with_index do |slide, index| %>
+          <div class="vertical-slide">
+            <%= image_tag slide['desktop_image'], class: "dt-img" %>
+            <%= image_tag slide['mobile_image'], class: "mobile-img" %>
+          </div>
+        <% end %>
+      </section>
+    </div>
+
+    <div class='vertical-slides-right'>
+      <section class="text-@content">
+        <h4 class="title"><%= @title %></h4>
+        <p class="description"><%= @description %></p>
+      </section>
+    </div>
+  </div>
+</div>

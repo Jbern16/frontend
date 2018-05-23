@@ -1,0 +1,19 @@
+.master-layout{
+  .ct-page-title{
+    padding-bottom: 0;
+    @include sm{
+      padding-bottom: 0;
+    };
+
+    h1{
+      text-align: center;
+      display: block;
+      margin: 0 auto;
+      font-size: 47px;
+      line-height: 1.5;
+      @include sm{
+        font-size: 30px;
+      };
+    }
+  }
+}

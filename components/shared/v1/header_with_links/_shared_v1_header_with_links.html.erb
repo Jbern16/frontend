@@ -1,0 +1,11 @@
+<header class="header-with-links <%= @classes %>">
+  <div class="inner-header">
+    <%= link_to(image_tag(@img, class: "header-logo"), @cta_link || @cta_link, class: "header-logo-link") %>
+
+    <ul class="header-links">
+      <% @links.each do |header_link| %>
+        <li><%= link_to header_link['text'], header_link['link'] || @cta_link %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>

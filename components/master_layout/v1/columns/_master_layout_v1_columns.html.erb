@@ -1,0 +1,56 @@
+<div class="ct-component ct-columns <%= @classes %>">
+  <div class="inner-ct-component">
+
+    <%- if @title %>
+      <h2 class="ct-component-title"><%= @title.html_safe %></h2>
+    <% end -%>
+
+    <div class="items <%= @class %>">
+      <% @columns.each do |column| %>
+        <% case column['type'] %>
+        <% when 'card' %>
+          <div class="column card">
+            <% if column['img_name'] %>
+              <div class='image'>
+                <%= image_tag column['img_name'] %>
+              </div>
+            <% end %>
+
+            <div class='copy'>
+              <% if column['pre_title'] %>
+                <h6 class="pre-title"><%= column['pre_title'].html_safe  %></h6>
+              <% end %>
+              <% if column['title'] %>
+                <p class="title"><%= column['title'].html_safe  %></p>
+              <% end %>
+              <% if column['text'] %>
+                <p class="text"><%= column['text'].html_safe %></p>
+              <% end %>
+            </div>
+
+            <% if column['btn-text'] && column['btn-link'] %>
+              <div class="btn-container">
+                <%= link_to column['btn-text'].html_safe , column['btn-link'] || @cta_link, class: 'card-btn' %>
+              </div>
+            <% end %>
+          </div>
+
+        <% when 'button' %>
+          <%= link_to column['text.html_safe'] , column['link'] || @cta_link, class: 'final-cta-btn track-cta' %>
+        <% when 'tile' %>
+          <div class=' column tile'>
+            <% if column['pre_title'] %>
+              <p class="pre-title"><%= column['pre_title'].html_safe %></p>
+            <% end %>
+            <% if column['title'] %>
+              <h3><%= column['title'].html_safe %></h3>
+            <% end %>
+            <% if column['text'] %>
+              <p class="text"><%= column['text'].html_safe %></p>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

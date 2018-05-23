@@ -1,0 +1,12 @@
+<div data-controller="shared-v1-fullscreen-modal" id="<%= 'bio_ep' if @exit %>" class="fullscreen-modal <%= @classes %>">
+
+  <%= link_to "✖", "#", id: "bio_ep_close", class: "js-modal-close modal-close-btn", onclick: "$('.fullscreen-modal').removeClass('visible'); return false;" %>
+
+  <div class="inner-modal">
+    <h2 class="modal-headline"><%= @headline %><h2>
+    <h3 class="subheadline"><%= @subheadline %></h3>
+
+    <%= link_to @cta_text, @cta_link || @cta_link, class: "modal-cta-btn track-cta" %>
+  </div>
+
+</div>

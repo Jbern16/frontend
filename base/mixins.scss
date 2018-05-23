@@ -1,0 +1,86 @@
+@function em-calc($pt) {
+  @return ($pt / 16) * 1em
+};
+
+// MEDIA QUERIES
+$mobile-width: 767px;
+$tablet-width: 1080px;
+$desktop-width: 1440px;
+
+$screen-xs-max: 767px;
+$screen-sm-min: $screen-xs-max + 1;
+$screen-sm-max: 991px;
+$screen-md-min: $screen-sm-max + 1;
+$screen-md-max: 1199px;
+$screen-lg-min: $screen-md-max + 1;
+$screen-lg-max: 1399px;
+$screen-xg-min: $screen-lg-max + 1;
+
+$dt-section-percentage-width: 80%;
+$dt-section-max-width: 1200px;
+$mobile-section-width: 96%;
+
+$headerHeight: 70px;
+$slideHeaderHeight: 50px;
+
+
+
+@mixin sm {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+
+.dt-only{
+  @include sm{
+    display: none;
+  };
+}
+
+.mobile-only{
+  @include lg{
+    display: none;
+  };
+}
+
+
+
+$margin-increments: 0 5 10 20 30 40 50 60 70 80 90;
+@each $num in $margin-increments {
+  .top-#{$num} {
+    margin-top: $num + px;
+  }
+
+  .bottom-#{$num} {
+    margin-bottom: $num + px;
+  }
+
+  @include sm {
+    .mobile-top-#{$num} {
+      margin-top: $num + px;
+    }
+
+    .mobile-bottom-#{$num} {
+      margin-bottom: $num + px;
+    }
+  }
+}

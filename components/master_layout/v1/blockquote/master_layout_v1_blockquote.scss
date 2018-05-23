@@ -1,0 +1,37 @@
+$ctaColor: blue;
+
+.master-layout{
+  .ct-blockquote{
+
+    blockquote.text-blockquote2 {
+      margin: 30px 0 30px 0;
+      @media(max-width: 700px) {
+        margin: 15px 0 15px 0;
+      }
+      p {
+        border-left: 1px solid $ctaColor;
+        color: $ctaColor;
+        font-style: italic;
+        font-size: 26px;
+        padding: 30px 0 30px 25px;
+        margin-left: -25px;
+        line-height: 39px;
+        @media(max-width: 700px) {
+          margin-left: auto;
+          font-size: 20px;
+          line-height: 30px;
+        }
+      }
+    }
+
+    .blockquote-author {
+      color: $ctaColor;
+      font-style: italic;
+      margin-left: -25px;
+
+      @media(max-width: 700px) {
+        margin-left: auto;
+      }
+    }
+  }
+}

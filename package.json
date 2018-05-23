@@ -1,0 +1,12 @@
+{
+  "name": "sheridan_bp",
+  "version": "1.0.0",
+  "description": "templates",
+  "files": [
+    "frontend/**/*/*.js"
+  ],
+  "main": "index.js",
+  "repository": "git@github.com:Jbern16/sheridan_bp.git",
+  "author": "Jbern16 <jbern16@gmail.com>",
+  "license": "MIT"
+}

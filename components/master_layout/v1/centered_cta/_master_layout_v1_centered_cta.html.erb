@@ -1,0 +1,15 @@
+<div class="ct-component ct-centered-cta <%= @classes %>">
+
+  <div class="inner-ct-component">
+
+    <%- if @lead %>
+      <h4 class="final-text"><%= @lead.html_safe %></h4>
+    <% end -%>
+
+    <%- if @text %>
+      <%= link_to @text.html_safe, @cta_link || @cta_link, class: 'final-cta-btn track-cta' %>
+    <% end -%>
+
+  </div>
+
+</div>
