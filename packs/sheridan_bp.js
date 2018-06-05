@@ -1,2 +1,2 @@
 import 'layouts';
-import 'components';
+import '../components';
