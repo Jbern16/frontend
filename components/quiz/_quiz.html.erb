@@ -1,0 +1,58 @@
+<div class="sh-quiz-container <%= @content['classes'] %>" data-controller='quiz'>
+  <div class="quiz-top">
+    <section class="quiz-header">
+     <%= image_tag 'logo.png', class: "header-logo" %>
+     <p id="mobile-progress-count" class="progress-count"><span class="current-sequence-num">1</span> of <%= @content["sequences"].count %></p>
+    </section>
+
+    <section class="progress-bar-container">
+     <% if @content['status'].present? && @content['status']['title'].present? %>
+       <h2><%= @content['status']['title'] %></h2>
+       <p><%= @content['status']['description'] %></p>
+     <% end %>
+     <p id="dt-progress-count" class="progress-count"><span class="current-sequence-num">1</span> of <%= @content["sequences"].count %></p>
+     <div class="progress-bar-outer">
+       <div class="progress-bar-inner"></div>
+     </div>
+    </section>
+  </div>
+
+  <div class="quiz-bottom">
+    <div id="quiz-slides" class="active"
+       data-sequence-count="<%= @content["sequences"].count %>"
+       data-redirect-location="<%= @cta_link %>"
+       data-seconds-to-redirect="<%= @content["seconds_to_redirect"] %>"
+       data-seconds-to-calculate="<%= @content["seconds_to_calculate"] %>"
+       data-skip-redirect="<%= @content['skip_redirect'] %>">
+
+     <% if @content["splash"].present? %>
+       <%= render "templates/quiz/content_types/splash_options/#{@content["splash"]["format"]}", splash_content: @content["splash"] %>
+     <% end %>
+
+     <% @content["sequences"].each_with_index do |sequence, index| %>
+       <section class="quiz-slide sequence-slide slide-<%= index %> <%= sequence['classes'] %>" data-order="<%= sequence["order"] %>" data-has-variants="<%= sequence["has_variants"] %>">
+         <div class="inner-sequence-slide">
+           <% sequence["questions"].each do |question| %>
+             <div class="question-container <%= 'is-variant' if question["is_variant"] %>"  <%= "data-variant-id=#{question['variant_id']}" %>>
+               <h2 class="question-prompt"><%= question["prompt"] %></h2>
+               <div class="answers-container <%= question["answer_alignment"] %>">
+                 <% question["answers"].each do |answer| %>
+                   <%= render "templates/quiz/content_types/answer_options/#{answer["format"]}", answer_content: answer, answer_count: question["answers"].count %>
+                 <% end %>
+               </div>
+             </div>
+           <% end %>
+         </div>
+       </section>
+     <% end %>
+    </div>
+
+    <% if @content["calculation"].present? %>
+     <%= render "templates/quiz/content_types/calculation_options/#{@content["calculation"]["format"]}", calculation_content: @content["calculation"] %>
+    <% end %>
+
+    <% if @content["complete"].present? %>
+     <%= render "templates/quiz/content_types/complete_options/#{@content["complete"]["format"]}", complete_content: @content["complete"] %>
+    <% end %>
+  </div>
+</div>
